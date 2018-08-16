@@ -22,6 +22,6 @@ public class CreditScoreResponse {
     }
 
     public enum CreditScore {
-        HIGH
+        HIGH, LOW
     }
 }
