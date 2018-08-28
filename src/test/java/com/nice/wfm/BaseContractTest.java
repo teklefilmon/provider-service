@@ -6,22 +6,26 @@ import com.nice.wfm.service.CreditCheckService;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
 
+import static com.nice.wfm.dto.CreditScoreResponse.CreditScore.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /**
  * Created on 8/16/18.
  * Author: filmon
- * Apple Inc.
+ * Nice Systems Ltd
  */
 
-public class BaseContractTest {
+public abstract class BaseContractTest {
 
     @Before
     public void setup(){
         final CreditCheckService creditCheckService = mock(CreditCheckService.class);
-        when(creditCheckService.doCreditCheck("12-34-5678")).thenReturn(new CreditScoreResponse(CreditScoreResponse.CreditScore.HIGH));
-        when(creditCheckService.doCreditCheck("12-34-5679")).thenReturn(new CreditScoreResponse(CreditScoreResponse.CreditScore.LOW));
+
+        when(creditCheckService.doCreditCheck("12-34-5678"))
+                .thenReturn(new CreditScoreResponse(HIGH));
+        when(creditCheckService.doCreditCheck("12-34-5679"))
+                .thenReturn(new CreditScoreResponse(LOW));
 
         RestAssuredMockMvc.standaloneSetup(new CreditCheckController(creditCheckService));
     }

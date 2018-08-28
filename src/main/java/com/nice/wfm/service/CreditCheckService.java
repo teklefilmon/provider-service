@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created on 8/16/18.
  * Author: filmon
- * Apple Inc.
+ * Nice Systems Ltd
  */
 
 @Service

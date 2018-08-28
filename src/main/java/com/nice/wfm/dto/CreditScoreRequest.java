@@ -3,7 +3,7 @@ package com.nice.wfm.dto;
 /**
  * Created on 8/16/18.
  * Author: filmon
- * Apple Inc.
+ * Nice Systems Ltd
  */
 
 public class CreditScoreRequest {

@@ -84,6 +84,11 @@
                 <extensions>true</extensions>
                 <configuration>
                     <baseClassForTests>com.nice.wfm.BaseContractTest</baseClassForTests>
+                    <contractsMode>LOCAL</contractsMode>
+                    <contractDependency>
+                        <groupId>com.nice.wfm</groupId>
+                        <artifactId>central-contracts</artifactId>
+                    </contractDependency>
                 </configuration>
             </plugin>
         </plugins>
